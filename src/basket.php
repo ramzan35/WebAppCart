@@ -37,9 +37,9 @@ include("db.php");
 	foreach($_SESSION['basket'] as $id => $qtys) {
 		$prodSQL="select prodId,prodName,prodPrice from product where prodId=".$id;
 		//execute SQL query
-		$exeprodSQL=mysql_query($prodSQL) or die(mysql_error());
+		$exeprodSQL=mysqli_query($prodSQL) or die(mysql_error());
 		//create array of records & populate it with result of the execution of the SQL query
-		$thearrayprod=mysql_fetch_array($exeprodSQL);
+		$thearrayprod=mysqli_fetch_array($exeprodSQL);
 		$total += $thearrayprod['prodPrice']*$qtys;
     echo "<tr><th>".$thearrayprod['prodName']."</th>";
 	echo "<th>".$thearrayprod['prodPrice']*$qtys."</th>";
