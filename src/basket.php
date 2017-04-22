@@ -37,9 +37,9 @@ include("db.php");
 	foreach($_SESSION['basket'] as $id => $qtys) {
 		$prodSQL="select prodId,prodName,prodPrice from product where prodId=".$id;
 		//execute SQL query
-		$exeprodSQL=mysqli_query($prodSQL) or die(mysql_error());
+		$exeprodSQL=mysql_query($prodSQL) or die(mysql_error());
 		//create array of records & populate it with result of the execution of the SQL query
-		$thearrayprod=mysqli_fetch_array($exeprodSQL);
+		$thearrayprod=mysql_fetch_array($exeprodSQL);
 		$total += $thearrayprod['prodPrice']*$qtys;
     echo "<tr><th>".$thearrayprod['prodName']."</th>";
 	echo "<th>".$thearrayprod['prodPrice']*$qtys."</th>";
@@ -55,11 +55,17 @@ include("db.php");
 	echo "<p></p>";
 	echo "<a href=clearBasket.php>Clear the Basket</a>";
 	echo "<p></p>";
-	echo "New workedup customers";
-	echo "<a href=login.php>Login</a>";
-	echo "<br>";
-	echo "Registered workedup members";
-	echo "<a href=register.php>register</a>";
-	
+
+if(isset($_SESSION['userId'])){
+	echo "To finalise your order ";
+    echo "<a href=checkout.php>Chechout</a>";
+}
+else {
+    echo "New workedup customers";
+    echo "<a href=login.php>Login</a>";
+    echo "<br>";
+    echo "Registered workedup members";
+    echo "<a href=register.php>register</a>";
+}
 include("footfile.html");
 ?>

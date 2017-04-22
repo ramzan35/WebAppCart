@@ -3,10 +3,10 @@ $dbhost = 'Localhost';
 $dbuser = 'root';
 $dbpass = '';
 
-$conn = mysqli_connect($dbhost, $dbuser, $dbpass) ;
+$conn = mysql_connect($dbhost, $dbuser, $dbpass) ;
 if (!$conn)
   {
-  die('Could not connect: ' . mysqli_error());
+  die('Could not connect: ' . mysql_error());
   }
-mysqli_select_db("product", $conn);
+mysql_select_db("product", $conn);
 ?>	
