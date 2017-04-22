@@ -54,7 +54,7 @@ echo "<p></p>";
 		echo "<a href=register.php>register</a>";
 	}else{
 	
-	$prodSQL="INSERT INTO users(userFName,userSName,userAddress,userPostcode,userTelNo,userEmail,userPassword) values('$fName','$lName','$address','$postcode','$telNo',
+	$prodSQL="INSERT INTO users(userType,userFName,userSName,userAddress,userPostcode,userTelNo,userEmail,userPassword) values('C',$fName','$lName','$address','$postcode','$telNo',
 	'$emailAdd','$pass')";
 	//execute SQL query
 	$exeprodSQL=mysql_query($prodSQL);

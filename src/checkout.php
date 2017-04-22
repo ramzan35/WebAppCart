@@ -61,8 +61,12 @@ if($exeSQL){
     echo "<th>$total</th>";
     echo "</table>";
 
+}else{
+    echo "Error occurred";
 }
 
+session_unset();
+session_destroy();
 
 
 //include head layout

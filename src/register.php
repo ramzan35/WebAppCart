@@ -36,6 +36,7 @@ echo "<p></p>";
 	echo "<tr><th><button type='submit' value='Submit'>Register</button></th>";
 	echo "<th><button type='reset' value='Reset'>Reset</button></th></tr>";
 	echo "</table>";
+	echo "</form>";
 	
 	
 		
