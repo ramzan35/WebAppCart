@@ -47,7 +47,7 @@ include("db.php");
 	echo "<th>".$thearrayprod['prodPrice']*$qtys."</th>";
 	}
 	}
-	
+	$_SESSION['total'] = $total;
 	echo "<tr><th colspan = 3>Total</th>";
 	echo "<th>$total</th>";
 	echo "</table>";
